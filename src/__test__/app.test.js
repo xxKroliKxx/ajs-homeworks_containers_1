@@ -6,6 +6,14 @@ test('add', () => {
   expect(t.members.has('тест')).toBe(true);
 });
 
+test('add 2', () => {
+  const t = new Team();
+  t.add('тест');
+  expect(() => {
+    t.add('тест');
+  }).toThrow(new Error('element exists'));
+});
+
 test('add all', () => {
   const t = new Team();
   t.addAll('тест', 'тест1', 'тест');

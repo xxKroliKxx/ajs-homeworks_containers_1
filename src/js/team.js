@@ -4,6 +4,7 @@ export default class Team {
   }
 
   add(character) {
+    if (this.members.has(character)) throw new Error('element exists');
     this.members.add(character);
   }
 
@@ -14,6 +15,6 @@ export default class Team {
   }
 
   toArray() {
-      return Array.from(this.members)
+    return Array.from(this.members);
   }
 }
